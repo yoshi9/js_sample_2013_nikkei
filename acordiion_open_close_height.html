@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<title>開閉式のパネル 高さ調整</title>
+<head>
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css"/><!-- jquery UI のcss-->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script><!-- jquery　本体-->
+<script type="text/javascript"  src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script><!-- jquery-UI　本体-->
+
+<script type="text/javascript" >
+$(function () {
+  $('.panel').accordion({
+      active:false ,
+      collapsible : true,
+      heightStyle : 'auto'
+      
+//       beforeActivate: function( event, ui ) {}
+  });
+//  $('.panel').accordion({
+//      heightStyle : 'auto'
+//  });
+
+});
+</script>
+
+
+</head>
+<body>
+<h1>開閉式のパネル 高さ調整</h1>
+<div class="panel">
+   <h3>開閉式使用例</h3>
+   <div>開閉式の使用例です</div>
+
+</div>
+<div class="panel">
+
+   <h3>こちらも開閉式使用例</h3>
+   <div>こちらも開閉式の使用例です。<br />
+   ここはデフォルトでアクティブにしています。
+   </div>
+
+</div>
+<div class="panel">
+   <h3>やっぱり開閉式使用例</h3>
+   <div>やっぱり開閉式の使用例です</div>
+
+</div>
+</body>
+
+</html>

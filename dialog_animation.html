@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<title>ダイアログ アニメーション</title>
+<head>
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css"/><!-- jquery UI のcss-->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script><!-- jquery　本体-->
+<script type="text/javascript"  src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script><!-- jquery-UI　本体-->
+
+<script type="text/javascript" >
+$(function () {
+    $('#dialog').dialog({
+    
+        show:{
+        effect : 'slide',
+        delay  : 500,
+        duration : 5000,
+        easing : 'easeInBounce'
+        },
+        hide: 'explode'
+    
+    });
+
+});
+</script>
+
+
+</head>
+<body>
+<h1>ダイアログ アニメーションく</h1>
+<div id="dialog" title="ダイアログのテストです">
+    <p>モーダルダイアログのテストをしています。</p>
+</div>
+
+<table>
+        <tbody><tr>
+            <td>effect
+            </td>
+            <td>アニメーションの種類
+            </td>
+        </tr>
+        <tr>
+            <td>delay
+            </td>
+            <td>アニメーションの開始時間(ミリ秒)
+            </td>
+        </tr>
+        <tr>
+            <td>delay
+            </td>
+            <td>アニメーションの再生時間(ミリ秒)
+            </td>
+        </tr>
+        <tr>
+            <td>easing
+            </td>
+            <td>変化の程度
+            </td>
+        </tr>
+    </tbody>
+    </table>
+
+<a href="http://alphasis.info/2011/06/jquery-ui-dialog-show-hide/">http://alphasis.info/2011/06/jquery-ui-dialog-show-hide/</a>
+</body>
+
+</html>

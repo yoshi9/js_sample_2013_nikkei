@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<title></title>
+<head>
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css"/><!-- jquery UI のcss-->
+<link href="css/more/jquery.more.css" rel="stylesheet" type="text/css"/><!-- jquery UI のcss-->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script><!-- jquery　本体-->
+<script type="text/javascript"  src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script><!-- jquery-UI　本体-->
+<script type="text/javascript"  src="js/more/jquery.more.min.js"></script><!-- jquery-UI　本体-->
+
+<script type="text/javascript" >
+$(function () {
+    $('#longtext').more({
+        length :140,
+        ellipsisText : '...',
+        moreText : '隠す',
+        lessText : '全文を表示',
+        onChange : function(ex) {
+            if(ex) {
+                window.alert('140文字以上のテキストを隠しました。')
+            } else {
+                window.alert('全文表示しました。');
+            }
+        }
+    
+    
+    });
+});
+</script>
+
+
+</head>
+<body>
+<h1></h1>
+<div>
+ <p id="longtext">
+ 皆様こんにちは。群馬大学の下田でございます。よろしくお願いいたします。<br/>
+　今日は主に私ども群馬県でのインターネット時代の子育て・教育の取り組みをご紹介しつつ、現在、日本の子ども社会にインターネット、とりわけ携帯電話からのインターネット利用がどういう影響を及ぼしているのか、シビアな幾つかの画面、現実をお見せして、皆様の現状認識にお役立ていただければと思っております。（皆様は、かなり驚かれると思います。）<br />
+　この複雑な問題について理解をしていただくため、画面をご覧になっていただきたいと思います。<br />
+　まず、私どもは、群馬県で「市民インストラクター」という、お父さん、お母さん、PTAの会長さん、それからお寺の住職さん、市役所の教育委員会の職員の方々、みんな一介の市民として子どものネット利用を体験して、そして、問題が起きれば大人、親として地域社会で対応しよう、という体制をつくっております。<br />
+　その「市民インストラクター」のプロモーションビデオを最初に見ていただきたいと思います。実は、子どもたちの実態は大変、深刻でございまして、私どもは気が滅入っているのですが、「この際、元気にやろう。」ということで、勇ましいマーチ風の音楽をつけて、こういうビデオをつくっております。<br />
+<br />
+<br /> 
+ 
+ </p>
+</div>
+</body>
+
+</html>

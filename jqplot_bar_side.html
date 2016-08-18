@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<title></title>
+<head>
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css"/><!-- jquery UI のcss-->
+<link href="css/jqplot/jquery.jqplot.min.css" rel="stylesheet" type="text/css"/><!-- jquery UI のcss-->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script><!-- jquery　本体-->
+<script type="text/javascript"  src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script><!-- jquery-UI　本体-->
+<!--[if lt IE 9]>
+<script type="text/javascript"  src="js/jqplot/excanvas.js"></script>
+<![endif]-->
+<script type="text/javascript"  src="js/jqplot/jquery.jqplot.min.js"></script>
+<script type="text/javascript"  src="js/jqplot/plugins/jqplot.barRenderer.min.js"></script>
+<script type="text/javascript"  src="js/jqplot/plugins/jqplot.categoryAxisRenderer.min.js"></script>
+
+<script type="text/javascript" >
+$(function () {
+    var data1 =[[101, '1月'],[109, '2月'],[121, '3月'],[172, '4月'],[151, '5月'],[132, '6月']];
+    var data2 =[[100, '1月'],[114, '2月'],[134, '3月'],[167, '4月'],[143, '5月'],[121, '6月']];
+    
+    $.jqplot ('graph', [data1, data2 ],{
+        seriesDefaults : {
+            renderer: $.jqplot.BarRenderer,
+            rendererOptions : {barDirection : 'horizontal'}
+            },
+        series : [{label : '関東'}, {label : '関西'}],
+        legend : {show : true},
+        title : '2013年前期の売上高',
+        axes : {
+            yaxis:{renderer: $.jqplot.CategoryAxisRenderer}
+        }
+    });
+    
+
+});
+</script>
+
+
+</head>
+<body>
+<h1></h1>
+<div id="graph" style="width : 400px; height:300px;">
+</div>
+</body>
+
+</html>

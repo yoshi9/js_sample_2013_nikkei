@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<title>日付入力ボックス カレンダーの表示をカスタマイズする</title>
+<head>
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css"/><!-- jquery UI のcss-->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script><!-- jquery　本体-->
+<script type="text/javascript"  src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script><!-- jquery-UI　本体-->
+<script type="text/javascript"  src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/i18n/jquery-ui-i18n.min.js"></script>
+
+<script type="text/javascript" >
+$(function () {
+    $.datepicker.setDefaults($.datepicker.regional['ja']);
+    $('.datepicker').datepicker({
+        changeYear     : true,  // 年移動のための選択ボックスを表示するか？
+        changeMonth    : true,  // 月移動のための選択ボックスを表示するか？
+        showOtherMonths : true,  // 他の月の日も表示する
+        selectOtherMonths : true, // 他の月の日も選択可にする？
+        showButtonPanel : true, // ボタンパネルを表示するか？
+        showMonthAfterYear : true, // 年の後ろに月を表示する?
+        showWeek : true, // 年間週を表示する?
+        currentText : '本日', // 「今日」ボタンのキャプション
+        firstDay : 1, // 週の最初の曜日 (日: 0 、月:1)
+        hideIfNoPrevNext : false, // 前後月へのリンクを隠す?
+        nextText : '次の月は', // 翌月リンクのキャプション
+        prevText : '前の月は'  // 前月リンクのキャプション
+    });
+
+});
+</script>
+
+
+</head>
+<body>
+<h1>日付入力ボックス カレンダーの表示をカスタマイズする</h1>
+<div>
+
+<form>
+    <label for="date">日付:<label>
+    <input id="date" type="text" class="datepicker">
+    
+    
+    mindate / maxDate パラメータに指定できるデータ型
+    <table>
+        <tr>
+            <td>型
+            </td>
+            <td>設定値（例）
+            </td>
+            <td>意味
+            </td>
+        </tr>
+        <tr>
+            <td>Date 型 
+            </td>
+            <td>new Date (2013, 9, 5)
+            </td>
+            <td>2013年 9月 5日
+            </td>
+        </tr>
+        <tr>
+            <td>数値型
+            </td>
+            <td>-7
+            </td>
+            <td>7日前
+            </td>
+        </tr>
+        <tr>
+            <td>文字列型
+            </td>
+            <td>+2m 15d
+            </td>
+            <td>2ヶ月と15日後
+            </td>
+        </tr>
+    </table>
+</form>
+
+</div>
+</body>
+
+</html>

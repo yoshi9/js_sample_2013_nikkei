@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<title>テキストエリア入力監視</title>
+<head>
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css"/><!-- jquery UI のcss-->
+<link href="css/maxlength/jquery.maxlength.css" rel="stylesheet" type="text/css"/><!-- jquery UI のcss-->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script><!-- jquery　本体-->
+<script type="text/javascript"  src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script><!-- jquery-UI　本体-->
+<script type="text/javascript"  src="js/maxlength/jquery.maxlength.min.js"></script><!-- jquery-UI　本体-->
+
+<script type="text/javascript" >
+$(function () {
+        
+    $('#txtMemo').maxlength({
+        max: 140,
+        truncate : false,
+        feedbackTarget: '#feedback',
+        feedbackText: '残り{r}文字 ({m}文字上限)',
+    
+        overflowText: '{o}文字オーバー ({m}文字上限)',
+        
+        onFull: function(over) {
+            if(over) {
+                $('#feedback').css('color','Red');
+            }else {
+                $('#feedback').css('color','Blue');
+            }
+        }
+
+        
+    });
+
+});
+</script>
+
+
+</head>
+<body>
+<h1>テキストエリア入力監視</h1>
+<div>
+<form>
+<textarea id="txtMemo" class="txtMemo" rows="5" cols="50"></textarea>
+<div id="feedback" style="color:Blue"></div>
+
+
+</div>
+</form>
+
+</body>
+
+</html>

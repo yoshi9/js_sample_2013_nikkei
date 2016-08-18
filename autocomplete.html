@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>候補リスト</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script><!-- jquery　本体-->
+<script type="text/javascript"  src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script><!-- jquery-UI　本体-->
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css"/><!-- jquery UI のcss-->
+<link href="css/smoothness/jquery-ui-1.10.3.custom.min.css" rel="stylesheet" type="text/css"/><!-- jquery UI のcss-->
+
+<script type="text/javascript" >
+$(function () {
+// label リストに表示するテキスト value テキストボックスに反映する値 other 任意のキー
+    var data = [
+        { label : 'あいいろ' , value: 'あいいろ' , other : '#2B4B65' }, 
+        { label : 'あお' , value: 'あお' , other : '#006AB6' },
+        { label : 'あおたけ' , value: 'あおたけ' , other : '#6AA89D' },
+        { label : 'あおみどり' , value: 'あおみどり' , other : '#008E94'},
+        { label : 'あおむらさき' , value: 'あおむらさき' , other : '#7445AA'},
+        { label : 'あか' , value: 'あか' , other : '#FF0000'},
+        { label : 'そら' , value: 'sky' , other : '#7445AA'},
+        { label : 'sea' , value: 'うみ' , other : '#FF0000'}
+    
+    ];
+    
+    $('#txt').autocomplete({
+        source : data, // 候補リストを表すデータ
+        delay : 500, // 入力から候補リストを表示するまでの遅延時間(ミリ秒)
+        minLength : 1,  //候補リストを表示する最小文字数
+        autoFocus : true // 候補リスト表示時に自動でフォーカスするか
+    
+    });
+
+});
+</script>
+
+
+</head>
+<body>
+<h1>候補リスト</h1>
+<div>
+「あ」を入力する<br/>
+
+<label for="txt">色合:</label>
+<input id="txt" type="text" />
+
+<br/>
+<br/>
+<br/>
+※参考 プログラムから配列を受け取るようなときは以下のような形
+<br/>
+
+<br/>
+php部分
+<pre> <code>
+ $output[] = array('label'=&gt; $k , 'value' =&gt; $k , 'other' =&gt; $v); 
+ print(json_encode($output)); 
+</code> </pre> 
+html部分
+<pre> <code>
+    $('#txt').autocomplete({
+        source : 'list.php', 
+        delay : 500, 
+        minLength : 1,  
+        autoFocus : true 
+    });
+
+
+$(document).ready( function() {
+$("#ac2").autocomplete({
+	source: function(req, resp){
+		$.ajax({
+		    url: "autocomplete-datasource.php",
+		    type: "POST",
+		    cache: false,
+		    dataType: "json",
+		    data: {
+		      param1: req.term
+		    },
+		    success: function(o){
+		    	resp(o);
+		    },
+		    error: function(xhr, ts, err){
+		    	resp(['']);
+		    }
+		  });
+
+	}
+});
+});
+</code> </pre> 
+req.term にはユーザーの入力値が渡されます。resp はファンクションで、配列を渡すことでオートコンプリートリストに表示されます。
+
+<br/>
+http://idocsq.net/page/290
+ここの7ページ目くらいにデザイン変更
+
+<br/>
+
+
+</div>
+</body>
+
+</html>

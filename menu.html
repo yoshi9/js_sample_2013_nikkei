@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<title>メニュー </title>
+<head>
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css"/><!-- jquery UI のcss-->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script><!-- jquery　本体-->
+<script type="text/javascript"  src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script><!-- jquery-UI　本体-->
+
+<script type="text/javascript" >
+$(function () {
+    $('#menu').menu();
+
+});
+</script>
+
+
+</head>
+<body>
+<h1>メニュー </h1>
+<div>
+
+<ul id="menu" style="width : 200px;">
+    <li><a href="#">メニューA</a>
+        <ul style="width : 200px;">
+            <li><a href="#">サブメニューA</a>
+            </li>
+            <li><a href="#">サブメニューB</a>
+            </li>
+        </ul>
+    </li>
+    <li><a href="#">メニューB</a>
+        <ul>
+            <li><a href="#">サブメニューA</a>
+            </li>
+            <li><a href="#">サブメニューB</a>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+
+</div>
+</body>
+
+</html>

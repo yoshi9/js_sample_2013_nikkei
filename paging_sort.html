@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<title></title>
+<head>
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css"/><!-- jquery UI のcss-->
+<link href="css/fixheadertable/base.css" rel="stylesheet" type="text/css"/><!-- jquery UI のcss-->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script><!-- jquery　本体-->
+<script type="text/javascript"  src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script><!-- jquery-UI　本体-->
+<script type="text/javascript"  src="js/jquery-migrate-1.2.1.min.js"></script><!-- jquery-UI　本体-->
+<script type="text/javascript"  src="js/fixheadertable/jquery.fixheadertable.min.js"></script><!-- jquery-UI　本体-->
+
+<script type="text/javascript" >
+$(function () {
+    $('#data').fixheadertable({
+        caption : 'TableFixedHeaderプラグイン',
+        height : 200,
+        width : 500,
+        colratio : [145, 150, 200],
+        zebra : true ,
+        sortable : true,
+        sortedColId : 1,
+        sortType : ['string', 'integer', 'date'],
+        dateFormat : 'y-m-d',
+        pager : true,
+        rowPerPage : 10
+    
+    });
+
+});
+</script>
+
+
+</head>
+<body>
+<h1></h1>
+
+<table id="data">
+<thead>
+    <tr>
+        <th>文字列</th><th>数値</th><th>日付</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td>ああああ</td><td>1234</td><td>2010/1/1</td>
+    </tr>
+    <tr>
+        <td>いいい</td><td>56789</td><td>2011/3/1</td>
+    </tr>
+    <tr>
+        <td>うううう</td><td>987</td><td>2012/3/12</td>
+    </tr>
+    <tr>
+        <td>ええええ</td><td>1987</td><td>2012/4/12</td>
+    </tr>
+    <tr>
+        <td>おおおお</td><td>2987</td><td>2013/3/12</td>
+    </tr>
+    <tr>
+        <td>あああ</td><td>3987</td><td>2012/6/12</td>
+    </tr>
+    <tr>
+        <td>かかか</td><td>4987</td><td>2012/3/22</td>
+    </tr>
+    <tr>
+        <td>たたた</td><td>5987</td><td>2013/4/12</td>
+    </tr>
+    <tr>
+        <td>ななな</td><td>3987</td><td>2012/6/12</td>
+    </tr>
+    <tr>
+        <td>ままま</td><td>4987</td><td>2012/3/22</td>
+    </tr>
+    <tr>
+        <td>ややや</td><td>5987</td><td>2013/4/12</td>
+    </tr>
+    
+    
+</tbody>
+</table>
+
+http://www.tablefixedheader.com/
+</body>
+
+</html>

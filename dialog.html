@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<title>ダイアログ </title>
+<head>
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css"/><!-- jquery UI のcss-->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script><!-- jquery　本体-->
+<script type="text/javascript"  src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script><!-- jquery-UI　本体-->
+
+<script type="text/javascript" >
+$(function () {
+    $('#dialog').dialog({
+        height : 300,
+        width : 300,
+        closeText : '閉じる', // [x]ボタンのテキスト(close)
+        closeOnEscape : false // [Esc]キーでダイアログを閉じるか？
+    
+    });
+
+});
+</script>
+
+
+</head>
+<body>
+<h1>ダイアログ </h1>
+<div id="dialog" title="ダイアログのテストです">
+    <p>ダイアログのテストをしています。</p>
+</div>
+</body>
+
+</html>

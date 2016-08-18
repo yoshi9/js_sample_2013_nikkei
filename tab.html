@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<title>タブ</title>
+<head>
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css"/><!-- jquery UI のcss-->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script><!-- jquery　本体-->
+<script type="text/javascript"  src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script><!-- jquery-UI　本体-->
+
+<script type="text/javascript" >
+$(function () {
+  $('#tabs').tabs({
+      active : 2 
+  });
+
+});
+</script>
+
+
+</head>
+<body>
+<h1>タブ</h1>
+<div id="tabs">
+    <ul>
+        <li>
+        <a href="#t1">タブ１</a>
+        </li>
+        <li>
+        <a href="#t2">タブ２</a>
+        </li>
+        <li>
+        <a href="#t3">タブ３</a>
+        </li>
+    </ul>
+    <div id="t1">タブ１内容</div>
+    <div id="t2">タブ２内容</div>
+    <div id="t3">タブ３内容</div>
+
+
+</div>
+</body>
+
+</html>

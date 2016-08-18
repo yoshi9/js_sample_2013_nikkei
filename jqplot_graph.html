@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<title></title>
+<head>
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css"/><!-- jquery UI のcss-->
+<link href="css/jqplot/jquery.jqplot.min.css" rel="stylesheet" type="text/css"/><!-- jquery UI のcss-->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script><!-- jquery　本体-->
+<script type="text/javascript"  src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script><!-- jquery-UI　本体-->
+<!--[if lt IE 9]>
+<script type="text/javascript"  src="js/jqplot/excanvas.js"></script>
+<![endif]-->
+<script type="text/javascript"  src="js/jqplot/jquery.jqplot.min.js"></script>
+
+<script type="text/javascript" >
+$(function () {
+    var data1 =[[1, 10.1],[2, 10.9],[3, 14.1],[4, 17.2],[5, 19.1],[6, 21.9]];
+    var data2 =[[1, -4.9],[2, -2.3],[3, 1.1],[4, 7.2],[5, 12.1],[6, 15.9]];
+    
+    $.jqplot ('graph', [data1, data2 ],{
+        series : [{label : '東京都'}, {label : '青森県'}],
+        legend : {show : true},
+        title : '東京と青森の気温'
+    });
+    
+
+});
+</script>
+
+
+</head>
+<body>
+<h1></h1>
+<div id="graph" style="width : 400px; height:300px;">
+</div>
+</body>
+
+</html>

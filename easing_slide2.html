@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ja-JP"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>slider</title>
+<link rel="stylesheet" href="sample_files/style.css">
+<style>
+/* 初期設定
+--------------------------------------------------------- */
+
+body { padding: 20px; }
+
+
+
+/* slider
+--------------------------------------------------------- */
+.slideFrame {
+	position: relative;
+	margin: 0 20px;
+	overflow: hidden;
+	overflow-x: auto;
+	width: 900px;
+	height: 100px;
+	background: #333;
+	border: 5px solid #333;
+}
+
+
+.slideFrame2 {
+	position: absolute;
+	margin: 0 0px;
+	
+	overflow: hidden;
+	overflow-x: hidden;
+	top : 600px;
+	left : 0px;
+	width: 100%;
+	height: 100px;
+	background: #333;
+	border: 5px solid #333;
+}
+
+.slideGuide {
+	overflow: hidden;
+	width: 150%;
+	height: 100%;
+}
+
+.slideCell {
+	display: block;
+	float: left;
+	margin-right: 5px;
+	width: 1000px;
+	height: 100%;
+	background: #FFF;
+	color: #333;
+}
+
+/* sample */
+.slideCell a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: skyblue;
+}
+.slideCell a:hover {
+	background: yellow;
+}
+
+
+
+
+
+
+
+</style>
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+<script src="js/easing/jquery.easing.1.3.js"></script>
+<script src="js/easing/slider.js"></script>
+<script>
+$(function(){
+
+		// 初期設定は、自動＆左＆linear＆10ms
+		$("#slide-00").slider();
+		// 時間とイージングを変更。自動＆左＆swing＆5ms
+		$("#slide-01").slider({
+			time: 5,
+			easing: "swing"
+		});
+		// 方向を変更。自動＆右＆linear＆15ms
+		$("#slide-02").slider({
+			time: 15,
+			direction: "right"
+		});
+		// 手動とイージングを変更。手動＆quart＆10ms
+		$("#slide-03").slider({
+			auto: false,
+			pause: false
+		});
+		// クラス名を変更。手動＆クラス名指定＆linear＆10ms
+		$("#slide-04").slider({
+			auto: false,
+			easing: "easeOutQuart",
+			cellSelector: ".cell",
+			ctrlSelector: ".controller",
+			reverse: false,
+			pause: false
+		});
+		// ホバーではなくクリックでスライド
+		$("#slide-05").slider({
+			time: 5,
+			auto: false,
+			pause: false,
+			easing: "easeOutBounce",
+			ctrlClick: true,
+			ctrlHover: false
+		});
+		// 早送り・巻き戻し
+		$("#slide-06").slider({
+			time: 12,
+			speed: 3
+		});
+		// フィルム風
+		$("#slide-07").slider();
+		// ループしない。往復スライド。
+		$("#slide-08").siblings(".slideCtrl.left").hide();
+		$("#slide-08").slider({ shuttle: true, speed: 2 });
+		// debug 要素変更
+		$("#slide-10").slider();
+		// ドラッグに対応。
+		$("#slide-11").slider({ draggable: true });
+		
+});
+</script>
+</head>
+<body>
+
+<h1>slider demo</h1>
+
+	<h2>オプション指定なし。</h2>
+	<h3><code>$("#slide-00").slider();</code></h3>
+	<div style="overflow: hidden;" class="slideFrame" id="slide-00">
+		<ul style="width: 1680px;" class="slideGuide">
+			
+			
+			
+			
+			
+			
+		<li class="slideCell" style="width: 300px; margin-left: -57.95px;">５</li><li style="margin-left: 0px;" class="slideCell"><img src="sample_files/kaeru.gif"></li><li style="margin-left: 0px;" class="slideCell"><a href="#">１</a></li><li class="slideCell" style="background: none repeat scroll 0% 0% pink; margin-left: 0px;">２</li><li class="slideCell" style="width: 50px; margin-left: 0px;">３</li><li class="slideCell" style="font-size: 2em; color: red; margin-left: 0px;">４</li><li class="slideCell" style="width: 300px; margin-left: 0px; opacity: 1;">５</li><li style="margin-left: 0px; opacity: 1;" class="slideCell"><img src="sample_files/kaeru.gif"></li><li style="margin-left: 0px;" class="slideCell"><a href="#">１</a></li><li class="slideCell" style="background: none repeat scroll 0% 0% pink; margin-left: 0px;">２</li><li class="slideCell" style="width: 50px; margin-left: 0px;">３</li><li class="slideCell" style="font-size: 2em; color: red; margin-left: 0px; opacity: 1;">４</li></ul>
+	</div>
+
+	<h2>２倍速＆イージングあり。</h2>
+	<h3><code>$("#slide-01").slider({ time: 5, easing: "swing" }); // timeの初期値は10</code></h3>
+	<div style="overflow: hidden;" class="slideFrame" id="slide-01">
+		<ul style="width: 1675px;" class="slideGuide">
+			
+			
+			
+			
+			
+		<li class="slideCell" style="background: none repeat scroll 0% 0% pink; margin-left: -18.0349px;">２</li><li class="slideCell" style="width: 50px; margin-left: 0px;">３</li><li class="slideCell" style="width: 300px; margin-left: 0px;">５</li><li style="margin-left: 0px;" class="slideCell"><img src="sample_files/kaeru.gif"></li><li style="margin-left: 0px;" class="slideCell"><a href="#">１</a></li><li class="slideCell" style="background: none repeat scroll 0% 0% pink; margin-left: 0px;">２</li><li class="slideCell" style="width: 50px; margin-left: 0px;">３</li><li class="slideCell" style="width: 300px; margin-left: 0px;">５</li><li style="margin-left: 0px;" class="slideCell"><img src="sample_files/kaeru.gif"></li><li style="margin-left: 0px;" class="slideCell"><a href="#">１</a></li><li class="slideCell" style="background: none repeat scroll 0% 0% pink; margin-left: 0px;">２</li><li class="slideCell" style="width: 50px; margin-left: 0px;">３</li><li class="slideCell" style="width: 300px; margin-left: 0px;">５</li><li style="margin-left: 0px;" class="slideCell"><img src="sample_files/kaeru.gif"></li><li style="margin-left: 0px;" class="slideCell"><a href="#">１</a></li></ul>
+	</div>
+
+
+
+
+</body></html>

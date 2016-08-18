@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<title>アップダウン投票ボタン</title>
+<head>
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css"/><!-- jquery UI のcss-->
+<link href="css/upvote/jquery.upvote.css" rel="stylesheet" type="text/css"/><!-- jquery UI のcss-->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script><!-- jquery　本体-->
+<script type="text/javascript"  src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script><!-- jquery-UI　本体-->
+<script type="text/javascript"  src="js/upvote/jquery.upvote.js"></script><!-- jquery-UI　本体-->
+
+<script type="text/javascript" >
+$(function () {
+    $('#vote').upvote({
+        count: 15,
+        upvoted:1,
+        downvoted:0,
+        started:0,
+        callback: function(data) { 
+            window.alert('upvoted:' + data.upvoted +
+            '\r downvoted:' + data.downvoted +
+            '\r star:' + data.star );
+        }
+    });
+});
+</script>
+
+
+</head>
+<body>
+<h1>アップダウン投票ボタン</h1>
+<div id="vote" class="upvote upvote-unix">
+    <a class="upvote"></a>
+    <span class="count">0</span>
+    <a class="downvote"></a>
+    <a class="star"></a>
+</div>
+</body>
+
+</html>

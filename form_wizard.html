@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<title></title>
+<head>
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css"/><!-- jquery UI のcss-->
+<link href="css/jwizard/jquery.jWizard.min.css" rel="stylesheet" type="text/css"/><!-- jquery UI のcss-->
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script><!-- jquery　本体-->
+<script type="text/javascript"  src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script><!-- jquery-UI　本体-->
+<script type="text/javascript"  src="js/jwizard/jquery.jWizard.min.js"></script><!-- jquery-UI　本体-->
+
+<script type="text/javascript" >
+$(function () {
+    $('#wizard').jWizard({
+        title : true,
+        menu  : true,
+        progress : {
+            label : 'count',
+            append : '完了'
+        },
+        buttons : {
+            cancel : {
+                text : 'キャンセル',
+                type : 'reset',
+                icons : {
+                    primary : 'ui-icon-circle-close'
+                }
+            },
+            prev : {
+                text : '前へ',
+                type : 'button',
+                icons : {
+                    primary : 'ui-icon-circle-triangle-w'
+                }
+            },
+            next : {
+                text : '次へ',
+                type : 'button',
+                icons : {
+                    secondary : 'ui-icon-circle-triangle-e'
+                }
+            },
+            finish : {
+                text : '完了',
+                type : 'submit',
+                icons : {
+                    secondary : 'ui-icon-circle-check'
+                }
+            }
+        },
+        effects : {
+            steps : {
+                hide : {
+                    effect : 'slide',
+                    direction : 'left',
+                    duration : 500
+                }, 
+                show : {
+                    effect : 'slide',
+                    direction : 'right',
+                    duration : 500
+                }
+            }
+            
+        },
+        finish : function (e ,ui) {
+            alert('ウィザードが完了しました。');
+        }
+        
+    });
+
+});
+</script>
+
+
+</head>
+<body>
+<h1></h1>
+<div>
+
+
+<form id="wizard">
+<fieldset>
+    <legend>基本情報</legend>
+    <div>
+        <label for="name">お名前:</label><br/>
+        <input id="name" name="name" type="text" size="30">
+    </div>
+    <div>
+        <label for="address">ご近所:</label><br/>
+        <input id="address" name="address" type="text" size="30">
+    </div>
+    <div>
+        <label for="email">メールアドレス:</label><br/>
+        <input id="email" name="email" type="text" size="30">
+    </div>
+</fieldset>
+<fieldset>
+    <legend>書籍の感想</legend>
+    <div>
+        <label for="content">書籍の内容:</label><br/>
+        <input id="c0" name="content" type="radio" size="good"> 良かった
+        <input id="c1" name="content" type="radio" size="normal"> 普通
+        <input id="c2" name="content" type="radio" size="bad"> 悪かった
+    </div>
+</fieldset>
+<fieldset>
+    <legend>その他</legend>
+    <div>
+        <label for="content">ご意見をお願いします:</label><br/>
+        <textarea id="memo" name="memo" cols="30" rows="5"> </textarea>
+    </div>
+</fieldset>
+</form>
+
+
+
+</div>
+</body>
+
+</html>

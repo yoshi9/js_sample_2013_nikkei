@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<title>コンテキストメニュー</title>
+<head>
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css"/><!-- jquery UI のcss-->
+<link href="css/context/contextMenu.css" rel="stylesheet" type="text/css"/><!-- jquery UI のcss-->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script><!-- jquery　本体-->
+<script type="text/javascript"  src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script><!-- jquery-UI　本体-->
+<script type="text/javascript"  src="js/context/contextMenu.min.js"></script><!-- jquery-UI　本体-->
+
+<script type="text/javascript" >
+$(function () {
+    $('#map').contextMenu([
+        {
+           name: 'ホーム',
+//           img: 'image/home.png',
+           title: 'サポートページ',
+           fun: function() { window.alert('[HOME]')}
+        },
+        {
+           name: 'サンプルコード',
+//           img: 'image/home.png',
+           title: 'サンプルコードダウンロード',
+           fun: function() { window.alert('[Download]')}
+        },
+        {
+           name: 'ヘルプ',
+//           img: 'image/home.png',
+           title: 'ヘルプ',
+           subMenu : [
+               {
+                  name: 'FAQ',
+//                  img: 'image/home.png',
+                  title: 'よくある質問',
+                  fun: function() { window.alert('[FAQ]')}
+               },
+               {
+                  name: '掲示板',
+//                  img: 'image/home.png',
+                  title: '質問掲示板',
+                  fun: function() { window.alert('[BBS]')}
+               },
+               {
+                  name: 'メール',
+//                  img: 'image/home.png',
+                  title: '管理者に問い合わせ',
+                  fun: function() { window.alert('[Mail]')}
+               },
+               
+           ]
+
+
+        }
+    
+    
+    
+    ] , { triggerOn: 'contextmenu'}
+    
+    );
+
+});
+</script>
+
+
+</head>
+<body>
+<h1>コンテキストメニュー</h1>
+<div>右クリックでメニューがでる
+</div>
+</body>
+
+</html>

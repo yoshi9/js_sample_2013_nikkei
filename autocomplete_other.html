@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<title>候補リストに独自のデータを含める</title>
+<head>
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css"/><!-- jquery UI のcss-->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script><!-- jquery　本体-->
+<script type="text/javascript"  src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script><!-- jquery-UI　本体-->
+
+<script type="text/javascript" >
+$(function () {
+// label リストに表示するテキスト value テキストボックスに反映する値 other 任意のキー
+    var data = [
+        { label : 'あいいろ' , value: 'あいいろ' , other : '#2B4B65' }, 
+        { label : 'あお' , value: 'あお' , other : '#006AB6' },
+        { label : 'あおたけ' , value: 'あおたけ' , other : '#6AA89D' },
+        { label : 'あおみどり' , value: 'あおみどり' , other : '#008E94'},
+        { label : 'あおむらさき' , value: 'あおむらさき' , other : '#7445AA'},
+        { label : 'あか' , value: 'あか' , other : '#FF0000'}
+    
+    ];
+    
+    $('#txt').autocomplete({
+        source : data, // 候補リストを表すデータ
+        delay : 500, // 入力から候補リストを表示するまでの遅延時間(ミリ秒)
+        minLength : 1,  //候補リストを表示する最小文字数
+        autoFocus : true, // 候補リスト表示時に自動でフォーカスするか
+        select : function(e, ui) {
+                    if(ui.item) {
+                        $('#msg').text(ui.item.other);
+                    }
+                 }
+    
+    });
+
+});
+</script>
+
+
+</head>
+<body>
+<h1>候補リストに独自のデータを含める</h1>
+<div>
+「あ」を入力する<br/>
+
+<label for="txt">色合:</label>
+<input id="txt" type="text" />
+<div id="msg"></div>
+
+
+
+
+</div>
+</body>
+
+</html>

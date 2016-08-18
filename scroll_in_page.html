@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<title></title>
+<head>
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css"/><!-- jquery UI のcss-->
+<style>
+.btn_top {
+  text-align: right;
+  cursor: pointer;
+}
+.content {
+  clear: both;
+  margin: 20px 0;
+  padding: 20px 0;
+  height: 400px;
+  text-align: center;
+  font-size: 30px;
+  border: dotted 3px #ccc;
+}
+</style>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script><!-- jquery　本体-->
+<script type="text/javascript"  src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script><!-- jquery-UI　本体-->
+
+<script type="text/javascript" >
+$(function () {
+    //ページ内スクロール
+    $(".btn_sample").click(function () {
+        var i = $(".btn_sample").index(this)
+        var p = $(".content").eq(i).offset().top;
+        $('html,body').animate({ scrollTop: p }, 'fast');
+        return false;
+    });
+ 
+    //ページ上部へ戻る
+    $(".btn_top").click(function () {
+        $('html,body').animate({ scrollTop: 0 }, 'fast');
+        return false;
+    });
+});
+</script>
+
+
+</head>
+
+<body>
+<div id="sample">
+ 
+<ul>
+<li class="btn_sample">サンプル1へ</li>
+<li class="btn_sample">サンプル2へ</li>
+<li class="btn_sample">サンプル3へ</li>
+</ul>
+ 
+<div class="content">サンプル1</div>
+<div class="btn_top">ページ上部へ</div>
+<div class="content">サンプル2</div>
+<div class="btn_top">ページ上部へ</div>
+<div class="content">サンプル3</div>
+<div class="btn_top">ページ上部へ</div>
+ 
+</div>
+</body>
+
+</html>

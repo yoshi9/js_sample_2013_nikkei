@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<title>ダイアログ 表示位置</title>
+<head>
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css"/><!-- jquery UI のcss-->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script><!-- jquery　本体-->
+<script type="text/javascript"  src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script><!-- jquery-UI　本体-->
+
+<script type="text/javascript" >
+
+var opend =false;
+
+$(function () {
+    $('#dialog').dialog({
+        autoOpen : false,
+        position : { my : 'left top', of : '#open', at: 'right bottom'}
+    
+    });
+    $('#open').click( function() {
+          $('#dialog2').dialog('close');
+//      if (opend == false) {
+       
+          $('#dialog').dialog('open');
+//          opend = true
+//      }
+    
+    });
+    
+    
+    $('#dialog2').dialog({
+        autoOpen : false,
+        position : { my : 'left top', of : '#open2', at: 'right bottom'}
+    
+    });
+    $('#open2').click( function() {
+          $('#dialog').dialog('close');
+//      if (opend == false) {
+      $('#dialog2').dialog('open');
+//          opend = true
+//      }
+    
+    });
+    
+
+});
+</script>
+
+
+</head>
+<body>
+<h1>ダイアログ 表示位置</h1>
+<input type='button' id='open' value='ダイアログを開く'>
+
+<input type='button' id='open2' value='ダイアログを開く2'>
+
+<div id="dialog" title="ダイアログのテストです">
+    <p>モーダルダイアログのテストをしています。</p>
+</div>
+
+<div id="dialog2" title="ダイアログのテスト2">
+    <p>モーダルダイアログのテスト2をしています。</p>
+</div>
+
+
+</body>
+
+</html>

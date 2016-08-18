@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css"/><!-- jquery UI のcss-->
+<link href="css/jqplot/jquery.jqplot.min.css" rel="stylesheet" type="text/css"/><!-- jquery UI のcss-->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script><!-- jquery　本体-->
+<script type="text/javascript"  src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script><!-- jquery-UI　本体-->
+<!--[if lt IE 9]>
+<script type="text/javascript"  src="js/jqplot/excanvas.js"></script>
+<![endif]-->
+<script type="text/javascript"  src="js/jqplot/jquery.jqplot.min.js"></script>
+<script type="text/javascript"  src="js/jqplot/plugins/jqplot.pointLabels.min.js"></script>
+
+<script type="text/javascript" >
+$(function () {
+    var data =[
+        [624  ,576 ,'「5％」であり続けるための考え方'],
+        [747  ,653 ,'不安や迷いを解決する101のレッスン'],
+        [1029 ,674 ,'相場のどこで'],
+        [884  ,601 ,'一目均衡表入門書！'],
+        [1056 ,785 ,'確率統計入門'],
+        [561  ,481 ,'10年間の月間勝率90%の225先物寄り引けシステム']
+    
+    ];
+    
+    $.jqplot ('graph', [data],{
+        seriesDefaults : {
+            showLine : false,
+            markerOptions : {size :12},
+            pointLabels : {
+                    show : true,
+                    location: 'se'
+                    }
+            },
+        title : '記事別アクセスログ'
+    });
+    
+
+});
+</script>
+
+
+</head>
+<body>
+<h1></h1>
+<div id="graph" style="width : 400px; height:300px;">
+</div>
+</body>
+
+</html>

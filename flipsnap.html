@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<title></title>
+<head>
+
+<style type="text/css">
+.viewport {
+    width: 320px;
+    overflow: hidden;
+    margin: 0 auto;
+    -webkit-transform: translateZ(0); /* Optional: When heavy at iOS6+ */
+}
+
+.flipsnap {
+    width: 960px; /* 320px(item width) * 3(item count) */
+}
+
+
+.item {
+    float: left;
+    width: 310px;
+    font-size: 50px;
+    text-align: center;
+    padding: 50px 0;
+    background: #EFEFEF;
+    border: 5px solid #999;
+    color: #666;
+}
+
+.item2 {
+    background: none repeat scroll 0 0 #EFEFEF;
+    border: 5px solid #999999;
+    color: #666666;
+    float: left;
+    font-size: 50px;
+    margin: 0 10px;
+    padding: 50px 0;
+    text-align: center;
+    width: 200px;
+}
+
+#demo-maxPoint .item {
+    font-size: 20px;
+    padding: 10px 0;
+    width: 50px;
+    
+    
+}
+
+</style>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script><!-- jquery　本体-->
+<!-- script type="text/javascript" src="js/flickable/jquery.flickable-1.0b3.min.js"></script><!-- jquery　本体-->
+
+<!-- script type="text/javascript" src="js/flickable/jquery1_4_2.js"></script><!-- jquery　本体-->
+<!-- script type="text/javascript" src="js/flickable/flickable.js"></script><!-- jquery　本体-->
+<!-- flickableは古いjqueryでないと動かない -->
+
+<script type="text/javascript" src="js/flipsnap/flipsnap.min.js"></script><!-- jquery　本体-->
+
+    <script type="text/javascript">
+    
+//function resizeFunc() {
+//　var myWidth = $(document).width();
+//　myImage.css("width", myWidth);
+//　myImage.css("height", myWidth*0.5625);
+//　flipsnap.refresh();
+//}    
+    
+      $(function() {
+          Flipsnap('.flipsnap');
+
+var flipsnap = 
+Flipsnap('#demo-maxPoint', {
+    distance: 160, // 80px * 2
+    maxPoint: 3    // move able 3 times
+});
+       flipsnap.moveToPoint(5,0);
+
+ //        $('demo-maxPoint').css('transform','translate3d(-480px, 0px, 0px)');
+
+      });
+
+//$(window).resize(resizeFunc);				
+    </script>
+
+
+</head>
+<body>
+
+<h1></h1>
+    
+<div class="viewport">
+    <div class="flipsnap">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+</div>
+
+<div> 
+<br />
+<br />
+<br />
+<br />
+</div>
+
+
+
+<div class="viewport">
+    <div class="flipsnap" id="demo-maxPoint" >
+        <div class="item item2"><a href="#">1</a></div>
+        <div class="item item2"><a href="#">2</a></div>
+        <div class="item item2"><a href="#">3</a></div>
+        <div class="item item2"><a href="#">4</a></div>
+        <div class="item item2"><a href="#">5</a></div>
+        <div class="item item2"><a href="#">6</a></div>
+        <div class="item item2"><a href="#">7</a></div>
+        <div class="item item2"><a href="#">8</a></div>
+        <div class="item item2"><a href="#">9</a></div>
+        <div class="item item2"><a href="#">10</a></div>
+    </div>
+    
+</div>
+
+
+<a href="http://pxgrid.github.io/js-flipsnap/demo.html">http://pxgrid.github.io/js-flipsnap/demo.html</a>
+</body>
+
+</html>

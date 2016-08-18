@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<title></title>
+<head>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+<script src="js/easing/jquery.easing.1.3.js"></script>
+<script src="js/easing/slider.js"></script>
+<script>
+$(function(){
+$.fx.interval = 6;
+		// 初期設定は、自動＆左＆linear＆10ms
+		$("#slide-00").slider();
+		// 時間とイージングを変更。自動＆左＆swing＆5ms
+		$("#slide-01").slider({
+			time: 5,
+			easing: "swing"
+		});
+		// 方向を変更。自動＆右＆linear＆15ms
+		$("#slide-02").slider({
+			time: 15,
+			direction: "right"
+		});
+		// 手動とイージングを変更。手動＆quart＆10ms
+		$("#slide-03").slider({
+			auto: false,
+			pause: false
+		});
+		// クラス名を変更。手動＆クラス名指定＆linear＆10ms
+		$("#slide-04").slider({
+			auto: false,
+			easing: "easeOutQuart",
+			cellSelector: ".cell",
+			ctrlSelector: ".controller",
+			reverse: false,
+			pause: false
+		});
+		// ホバーではなくクリックでスライド
+		$("#slide-05").slider({
+			time: 5,
+			auto: false,
+			pause: false,
+			easing: "easeOutBounce",
+			ctrlClick: true,
+			ctrlHover: false
+		});
+		// 早送り・巻き戻し
+		$("#slide-06").slider({
+			time: 12,
+			speed: 3
+		});
+		// フィルム風
+		$("#slide-07").slider();
+		// ループしない。往復スライド。
+		$("#slide-08").siblings(".slideCtrl.left").hide();
+		$("#slide-08").slider({ shuttle: true, speed: 2 });
+		// debug 要素変更
+		$("#slide-10").slider();
+		// ドラッグに対応。
+		$("#slide-11").slider({ draggable: true });
+
+
+		// 時間とイージングを変更。自動＆左＆swing＆5ms
+		$("#slide-test").slider({
+			once: true,
+		});
+		
+});
+</script>
+<style>
+/* 初期設定
+--------------------------------------------------------- */
+
+body { padding: 20px; }
+
+
+
+/* slider
+--------------------------------------------------------- */
+.slideFrame {
+	position: relative;
+	margin: 0 20px;
+	overflow: hidden;
+	overflow-x: auto;
+	width: 900px;
+	height: 100px;
+	background: #333;
+	border: 5px solid #333;
+}
+
+
+.slideFrame2 {
+	position: absolute;
+	margin: 0 0px;
+	
+	overflow: hidden;
+	overflow-x: hidden;
+	top : 800px;
+	left : 0px;
+	width: 100%;
+	height: 100px;
+	background: #333;
+	border: 5px solid #333;
+}
+
+.slideGuide {
+	overflow: hidden;
+	width: 150%;
+	height: 100%;
+}
+
+.slideCell {
+	display: block;
+	float: left;
+	margin-right: 5px;
+	width: 1000px;
+	height: 100%;
+	background: #FFF;
+	color: #333;
+}
+
+/* sample */
+.slideCell a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: skyblue;
+}
+.slideCell a:hover {
+	background: yellow;
+}
+
+
+
+
+
+
+
+</style>
+
+</head>
+<body>
+
+<h1>slider demo</h1>
+
+	<h2>オプション指定なし。</h2>
+	<h3><code>$("#slide-00").slider();</code></h3>
+	<div class="slideFrame" id="slide-00">
+		<ul class="slideGuide">
+			<li class="slideCell"><a href="#"><img src="img/panorama.jpg" width="1100" height="100" /></a></li>
+		</ul>
+	</div>
+
+	<h2>リスタート指定</h2>
+	<h3><code>$("#slide-test").slider();</code></h3>
+	<div class="slideFrame" id="slide-test">
+		<ul class="slideGuide">
+			<li class="slideCell"><a href="#"><img src="img/panorama.jpg" width="1100" height="100" /></a></li>
+		</ul>
+	</div>
+
+	<h2>２倍速＆イージングあり。</h2>
+	<h3><code>$("#slide-01").slider({ time: 5, easing: "swing" }); // timeの初期値は10</code></h3>
+	
+	<div class="slideFrame2" id="slide-01">
+		<ul class="slideGuide">
+			<li class="slideCell"><a href="#"><img src="img/panorama.jpg" width="1100" height="100" /></a></li>
+		</ul>
+	</div>
+
+
+
+<br />
+
+<img src="img/huukei.jpg"  />
+
+参考 : http://kaelab.ranadesign.com/blog/demo/slider/
+
+
+<br />
+
+
+</body>
+</html>

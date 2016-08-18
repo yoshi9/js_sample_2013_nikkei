@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<title>ダイアログ リサイズ／移動操作</title>
+<head>
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css"/><!-- jquery UI のcss-->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script><!-- jquery　本体-->
+<script type="text/javascript"  src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script><!-- jquery-UI　本体-->
+
+<script type="text/javascript" >
+$(function () {
+    $('#dialog').dialog({
+        buttons: {
+            '詳細' : function () {
+                location.href = 'http://www.google.co.jp';
+            },
+            '閉じる' : function () {
+               $(this).dialog('close');
+            }
+        
+        }
+    
+    });
+
+});
+</script>
+
+
+</head>
+<body>
+<h1>ダイアログ リサイズ／移動操作</h1>
+<div id="dialog" title="ダイアログのテストです">
+    <p>モーダルダイアログのテストをしています。</p>
+</div>
+</body>
+
+</html>

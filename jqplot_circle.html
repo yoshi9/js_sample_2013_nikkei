@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css"/><!-- jquery UI のcss-->
+<link href="css/jqplot/jquery.jqplot.min.css" rel="stylesheet" type="text/css"/><!-- jquery UI のcss-->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script><!-- jquery　本体-->
+<script type="text/javascript"  src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script><!-- jquery-UI　本体-->
+<!--[if lt IE 9]>
+<script type="text/javascript"  src="js/jqplot/excanvas.js"></script>
+<![endif]-->
+<script type="text/javascript"  src="js/jqplot/jquery.jqplot.min.js"></script>
+<script type="text/javascript"  src="js/jqplot/plugins/jqplot.pieRenderer.min.js"></script>
+
+<script type="text/javascript" >
+$(function () {
+    var data =[[
+        ['東京', 11100],['神奈川', 9512],['千葉', 8509],['埼玉', 7172],['茨城', 7621],['大阪', 9132]
+        ]];
+    
+    $.jqplot ('graph', data,{
+        seriesDefaults : {
+            renderer: $.jqplot.PieRenderer ,
+            rendererOptions : {
+                    showDataLabels : true,
+                    startAngle: -90
+                    }
+            },
+        series : [{label : '関東'}],
+            
+        legend : {show : true},
+        title : '地域別のの売上'
+    });
+    
+
+});
+</script>
+
+
+</head>
+<body>
+<h1></h1>
+<div id="graph" style="width : 400px; height:300px;">
+</div>
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<title>日付入力ボックス 日付フォーマット変更</title>
+<head>
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css"/><!-- jquery UI のcss-->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script><!-- jquery　本体-->
+<script type="text/javascript"  src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script><!-- jquery-UI　本体-->
+
+<script type="text/javascript" >
+$(function () {
+    $.datepicker.setDefaults($.datepicker.regional['ja']);
+    $('.datepicker').datepicker({
+        dateFormat : 'm/d',
+        autoSize: true
+    });
+
+});
+</script>
+
+
+</head>
+<body>
+<h1>日付入力ボックス 日付フォーマット変更</h1>
+<div>
+
+<form>
+    <label for="date">日付:<label>
+    <input id="date" type="text" class="datepicker">
+    
+    
+    指定形式
+    <table>
+        <tr>
+            <td>y
+            </td>
+            <td>年2桁
+            </td>
+        </tr>
+        <tr>
+            <td>yy
+            </td>
+            <td>年4桁
+            </td>
+        </tr>
+        <tr>
+            <td>m
+            </td>
+            <td>月(１～１２)
+            </td>
+        </tr>
+        <tr>
+            <td>m
+            </td>
+            <td>月(０１～１２)
+            </td>
+        </tr>
+        <tr>
+            <td>M
+            </td>
+            <td>月の省略名
+            </td>
+        </tr>
+        <tr>
+            <td>MM
+            </td>
+            <td>月の完全名
+            </td>
+        </tr>
+        <tr>
+            <td>d
+            </td>
+            <td>(１～３１)
+            </td>
+        </tr>
+        <tr>
+            <td>dd
+            </td>
+            <td>(０１～３１)
+            </td>
+        </tr>
+        <tr>
+            <td>D
+            </td>
+            <td>曜日の省略名
+            </td>
+        </tr>
+        <tr>
+            <td>D
+            </td>
+            <td>曜日の完全名
+            </td>
+        </tr>
+        <tr>
+            <td>o
+            </td>
+            <td>年間通算日(１～３６６)
+            </td>
+        </tr>
+        <tr>
+            <td>oo
+            </td>
+            <td>年間通算日(００１～３６６)
+            </td>
+        </tr>
+        <tr>
+            <td>@
+            </td>
+            <td>Unix タイムスタンプ (1970/01/01 からの経過ミリ秒)
+            </td>
+        </tr>
+    </table>
+</form>
+
+</div>
+</body>
+
+</html>

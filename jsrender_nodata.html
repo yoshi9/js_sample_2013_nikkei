@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css"/><!-- jquery UI のcss-->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script><!-- jquery　本体-->
+<script type="text/javascript"  src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script><!-- jquery-UI　本体-->
+<script type="text/javascript"  src="js/jsviews/jsrender.min.js"></script><!-- jquery-UI　本体-->
+
+<script type="text/javascript" >
+$(function () {
+    var data = [
+        {isbn: '978-4-7741-5878-5', title: 'AndroidエンジニアのためのモダンJava', price : 3360 , publish : '技術評論社'},
+        {isbn: '978-4-7981-3257-0', title: '独習ASP.NET 第4版', price : 3990 , publish : '翔泳社'},
+        {isbn: '978-4-8222-9621-6', title: '書き込み式SQLのドリル 改訂新番', price : 2310 , publish : '日経BP社'},
+        {isbn: '978-4-7741-5611-8', title: 'JavaScriptライブラリ実践活用', price :2709 , publish : '技術評論社'},
+        {isbn: '978-4-7980-3585-7', title: 'はじめてのAndroidアプリ開発', price : 3150 , publish : '秀和システム'}
+        ]
+    
+//    $('#result').append($('#jstemplate').render(data));
+
+//データがない場合
+    $('#data-table').append($('#jstemplate_nodata').render());
+
+});
+</script>
+<script id="jstemplate" type="text/x-jsrender" >
+  <tr>
+      <td> <a href="http://www.wings.msn.to/index.php/-/A-03/{{>isbn}}"> {{>title}} </a>
+      </td>
+      <td>{{>publish}}</td>
+      <td>{{>price}}円</td>
+  </tr>
+
+</script>
+
+<script id="jstemplate_nodata" type="text/x-jsrender" >
+データがありません。
+</script>
+
+
+</head>
+<body>
+<h1></h1>
+<div id="data-table">
+
+<table >
+    <th> タイトル </th> <th> 出版社 <th> 価格 </th>
+    <tbody id="result"></tbody>
+</table>
+
+</div>
+
+<br />
+<br />
+これは簡単なサンプルですが、index等の変数があったりfor if 等の
+制御文が実行可能のようです。 <br />
+<br />
+参考 : <a href="http://borismoore.github.io/jsrender/demos/demos.html">http://borismoore.github.io/jsrender/demos/demos.html </a>
+
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<title>アコーディオンパネル</title>
+<head>
+
+<!-- link type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/dark-hive/jquery-ui.css" rel="stylesheet" / -->
+<!--link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/sunny/jquery-ui.min.css" rel="stylesheet" type="text/css"/><!-- jquery UI のcss-->
+<link type="text/css" href="css/sunny/jquery-ui.css" rel="stylesheet" />
+
+
+<!-- script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script><!-- jquery　本体-->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script><!-- jquery　本体-->
+<!-- script type="text/javascript"  src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script><!-- jquery-UI　本体-->
+<script type="text/javascript"  src="js/jquery-ui-1.10.3.custom.min.js"></script><!-- jquery-UI　本体-->
+
+<script type="text/javascript" >
+$(function () {
+    $('#panel').accordion( { active : 1 });
+
+});
+</script>
+
+
+</head>
+<body>
+<h1>アコーディオンパネル</h1>
+<div id="panel">
+   <h3>アコーディオン使用例</h3>
+   <div>アコーディオンの使用例です</div>
+
+   <h3>こちらもアコーディオン使用例</h3>
+   <div>こちらもアコーディオンの使用例です。
+   ここはデフォルトでアクティブにしています。
+   </div>
+
+   <h3>やっぱりアコーディオン使用例</h3>
+   <div>やっぱりアコーディオンの使用例です</div>
+
+</div>
+</body>
+
+</html>

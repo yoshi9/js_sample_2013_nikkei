@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<title></title>
+<head>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+<script src="js/simplescroll/jquery.simplyscroll.min.js"></script>
+<script>
+	$(function() { //on DOM ready
+		$("#scroller").simplyScroll();
+		$("#scroller2").simplyScroll();
+	});
+
+</script>
+<link href="css/simplescroll/jquery.simplyscroll.css" rel="stylesheet" type="text/css"/><!-- jquery UI のcss-->
+<style>
+
+#panorama2 { 
+	position: absolute;
+	top : 400px;
+	left : 5px;
+}
+
+
+/* Container DIV - automatically generated */
+.simply-scroll-container { 
+	position: relative;
+}
+
+/* Clip DIV - automatically generated */
+.simply-scroll-clip { 
+	position: relative;
+	overflow: hidden;
+}
+
+/* UL/OL/DIV - the element that simplyScroll is inited on
+Class name automatically added to element */
+.simply-scroll-list { 
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+	
+.simply-scroll-list li {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+	
+.simply-scroll-list li img {
+	border: none;
+	display: block;
+}
+
+/* Custom class modifications - adds to / overrides above
+
+.simply-scroll is default base class */
+
+/* Container DIV */
+.simply-scroll { 
+	width: 576px;
+	height: 200px;
+	margin-bottom: 1em;
+}
+
+/* Clip DIV */
+.simply-scroll .simply-scroll-clip {
+	width: 876px;
+	height: 200px;
+}
+	
+/* Explicitly set height/width of each list item */	
+.simply-scroll .simply-scroll-list li {
+	float: left; /* Horizontal scroll only */
+	width: 290px;
+	height: 200px;
+}
+
+</style>
+
+</head>
+<body>
+
+<h1>slider demo</h1>
+
+	<h2>オプション指定なし。</h2>
+	<h3></h3>
+	<div  >
+		<ul id="scroller">
+			<li ><img src="img/panorama.jpg"  /></li>
+		</ul>
+	</div>
+	
+	<div id="panorama2" >
+		<ul id="scroller2">
+			<li ><img src="img/panorama.jpg"  /></li>
+		</ul>
+	</div>
+	
+simply-scroll-clipの修正で枠幅が変わる
+
+
+<br />
+
+<img src="img/huukei.jpg"  />
+
+参考 : http://kaelab.ranadesign.com/blog/demo/slider/
+
+
+<br />
+
+
+</body>
+</html>
